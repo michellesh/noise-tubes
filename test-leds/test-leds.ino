@@ -6,7 +6,7 @@
 #define COLOR_ORDER     GRB
 #define LED_TYPE        WS2813
 
-#define NUM_LEDS 14
+#define NUM_LEDS 20
 
 CRGB leds[NUM_LEDS];
 
@@ -24,6 +24,7 @@ void setup() {
 void loop() {
   FastLED.clear();
 
+  /*
   int sinBeat = beatsin8(100, 0, NUM_LEDS);   // 30 beats per minute, range 0-255
 
   int beatTop = beatsin8(150, 3, NUM_LEDS);
@@ -41,6 +42,12 @@ void loop() {
       int hue = map(i, 0, NUM_LEDS, 0, 255);
       leds[i] = CHSV(hue, 255, BRIGHTNESS);
     }
+  }
+  */
+
+  for (int i = 0; i < NUM_LEDS; i++) {
+    int hue = map(i, 0, NUM_LEDS, 0, 255);
+    leds[i] = CHSV(hue, 255, BRIGHTNESS);
   }
 
   FastLED.show();
