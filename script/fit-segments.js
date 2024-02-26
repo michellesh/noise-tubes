@@ -109,5 +109,5 @@ sortedSegments.map(s => {
 
 stockPieces.forEach(stockPiece => {
   const total = sum(stockPiece)
-  console.log(stockPiece, "total", total, "remaining", stockLength - total)
+  console.log(stockPiece.map(x => x - bladeWidth), "total", total, "remaining", stockLength - total)
 })
